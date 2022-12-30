@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 
 export default function NavBar() {
   const router = useRouter();
-  console.log(router);
   return (
     <>
       <style jsx>{`
@@ -15,10 +14,10 @@ export default function NavBar() {
         }
       `}</style>
       <nav>
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className={router.pathname === "/" ? "active" : ""}>Home</a>
         </Link>
-        <Link href="/about">
+        <Link href="/about" legacyBehavior>
           <a className={router.pathname === "/about" ? "active" : ""}>About</a>
         </Link>
       </nav>
